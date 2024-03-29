@@ -1,31 +1,32 @@
 {
-    "name": "@sophat/sidebar",
+    "name": "sidebar-demo",
     "version": "0.0.1",
-    "description": "@sophat/sidebar build for sidebar ui supported with tailwindcss",
-    "main": "./dist/index.js",
+    "description": "The @sophat/sidebar project demo",
+    "private": true,
     "type": "module",
-    "module": "./dist/index.js",
     "scripts": {
-        "start": "tsc --watch",
-        "build": "tsc"
+        "start": "webpack serve --mode=development --hot --open",
+        "watch": "npx tailwindcss -i ./src/style.css -o ./dist/index.css --watch",
+        "build": "npx webpack --config webpack.config.js && npx tailwindcss -o ./dist/index.css --minify"
     },
-    "homepage": "https://sidebar.hey1010.com",
-    "repository": {
-        "url": "https://github.com/pphatdev/sidebar"
+    "author": "pphatdev",
+    "license": "MIT",
+    "devDependencies": {
+        "autoprefixer": "^10.4.17",
+        "copy-webpack-plugin": "^12.0.2",
+        "html-webpack-plugin": "^5.6.0",
+        "source-map-loader": "^5.0.0",
+        "tailwindcss": "^3.4.1",
+        "ts-loader": "^9.5.1",
+        "webpack": "^5.90.2",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.0.2"
     },
-    "bugs": {
-        "url": "https://github.com/pphatdev/sidebar/issues"
-    },
-    "keywords": [
-        "sophat", "@sophat/sidebar", "sidebar", "ui", "tailwindcss"
-    ],
-    "maintainers": [
-        {
-            "name": "pphatdev",
-            "url": "https://github.com/pphatdev",
-            "email": "info.sophat@gmail.com"
-        }
-    ],
-    "author": "pphatdev <info.sophat@gmail.com>",
-    "license": "MIT"
+    "dependencies": {
+        "@sophat/sidebar": "^0.0.1",
+        "clipboard": "^2.0.11",
+        "lodash": "^4.17.21",
+        "tsparticles": "^3.0.2",
+        "typescript": "^5.4.3"
+    }
 }

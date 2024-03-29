@@ -1,4 +1,4 @@
-# NodePackages
-node_modules/
-website/node_modules/
-website/dist/
+/node_modules/
+.env
+./dist
+./package-lock.json
